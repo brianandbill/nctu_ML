@@ -47,9 +47,11 @@ ps.
 3. 使用自己的模型把 training data 完成，用 train 好的模型去預測 testing data
 4. 最後得到的結果至少要有 Confusion matrix、classification report
 * Confusion matrix : 
+
 ![image](confusion_matrix.JPG)
 
 * classification report :
+
 ![image](classification_report.JPG)
 
 ### 寫報告(這部分由全部組員個別完成，6/1 之前)
