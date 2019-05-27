@@ -8,7 +8,7 @@ import time
 
 class Crawler():
   def __init__(self):
-    self.total_per_category = 1 # how many index per category (20 articles per an index)
+    self.total_per_category = 50 # how many index per category (20 articles per an index)
     self.category_urls = [] # all categories
     self.category_names = [] # all categories' name
     self.index_urls = []  # number of total_per_category of indexes
@@ -16,7 +16,7 @@ class Crawler():
     self.id = 1 # id's serial number
     self.error = 0
     # initialize the csv writer
-    self.writer = csv.writer(open('toy.csv', 'w'))
+    self.writer = csv.writer(open('data.csv', 'w'))
     self.writer.writerow(['id', 'category', 'words'])
   ##################################
   #             shared             #
@@ -47,7 +47,7 @@ class Crawler():
         print('category error\n')
         self.category_urls = []
         time.sleep(1)
-    for category_index in range(len(self.category_urls)):
+    for category_index in range(len(self.category_urls)-1, len(self.category_urls)):
       while True:
         try:
           self.get_index_urls(self.category_urls[category_index])
